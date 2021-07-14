@@ -27,7 +27,7 @@ export default function Navbar() {
               className="font-semibold mx-6 hover:text-yellow-400 text-gray-700"
               href="/"
             >
-              BLOG
+             ABOUT
             </a>
           </div>
           <div>
@@ -39,18 +39,7 @@ export default function Navbar() {
             </a>
           </div>
         </div>
-        <div className=" hidden md:flex items-center">
-          <div>
-            <button className="px-6 bg-yellow-400 mx-2 text-white py-2 font-semibold rounded-md">
-              LOGIN
-            </button>
-          </div>
-          <div>
-            <button className="px-4 border mx-2 border-yellow-300  text-yellow-400 font-semibold py-2 rounded-md">
-              SIGN UP
-            </button>
-          </div>
-        </div>
+     
         <div className="flex items-center md:hidden">
           <button
             onClick={() => setIsOpen(true)}
