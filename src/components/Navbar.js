@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <div className="bg-yellow-50 flex h-16 shadow-lg justify-between px-4 lg:px-16">
+      <div className="bg-yellow-50 flex h-16 shadow-sm justify-between px-4 lg:px-16">
         <div className=" flex items-center h-full">
           <img className="h-16 my-auto" src="/logo.png" alt="logo" />
           <div>
