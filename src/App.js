@@ -4,11 +4,13 @@ import Ebook from './components/Ebook'
 import Footer from './components/Footer'
 function App() {
   return (
-    <div className="h-screen overflow-x-hidden">
+    <div className="h-screen overflow-x-hidden relative ">
+     
    <Navbar/>
    <Header/>
    <Ebook/>
    <Footer/>
+ 
     </div>
   );
 }
