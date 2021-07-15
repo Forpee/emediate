@@ -25,7 +25,7 @@ export default function Navbar() {
           <div>
             <a
               className="font-semibold mx-6 hover:text-yellow-400 text-gray-700"
-              href="/"
+              href="/blog"
             >
               BLOG
             </a>
