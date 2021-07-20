@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import { RichText } from "prismic-reactjs";
 import Prismic from "@prismicio/client";
-import Header from "./components/HeaderBlog";
 import PostList from "./components/PostList";
 import DefaultLayout from "./components/DefaultLayout";
 import NotFound from "./NotFound";
@@ -38,16 +36,11 @@ export default function Blog() {
     fetchPrismicData();
   }, []);
   if (prismicData.homeDoc) {
-    const homeDoc = prismicData.homeDoc;
     const blogPosts = prismicData.blogPosts;
-    const title = RichText.asText(homeDoc.data.headline);
+
     return (
-      <DefaultLayout seoTitle={title}>
-        <Header
-          image={homeDoc.data.image}
-          headline={homeDoc.data.headline}
-          description={homeDoc.data.description}
-        />
+      <DefaultLayout wrapperClass=' bg-yellow-50 '>
+      <img className="bg-yellow-50 px-8 lg:w-1/2 xl:px-0 xl:w-1/3 mx-auto my-16" alt=' logo' src=' ye.png'></img>
         <PostList posts={blogPosts} />
       </DefaultLayout>
     );

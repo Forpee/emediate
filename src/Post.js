@@ -43,18 +43,25 @@ const {uid} = useParams()
 
   // Return the page if a document was retrieved from Prismic
   if (prismicDoc) {
+   
+    const src =prismicDoc.data.thumbnail.url
     const title =
       prismicDoc.data.title.length !== 0
         ? RichText.asText(prismicDoc.data.title)
         : "Untitled";
 
     return (
-      <DefaultLayout wrapperClass="main" seoTitle={title}>
-        <div className="outer-container">
+      <DefaultLayout wrapperClass="bg-yellow-50 " seoTitle={title}>
+ <div className='md:px-16'>
+ <div className="container px-8 md:px-16 text-xl xl:w-1/2 mx-auto bg-white shadow-lg rounded-xl my-16 p-16">
+       <div className="">
           <BackButton />
-          <h1>{title}</h1>
+          <h1 className="text-5xl md:text-6xl py-16 text-center">{title}</h1>
+          <img alt='' className='mx-auto mb-16 rounded-xl' src={src}/>
         </div>
         <SliceZone sliceZone={prismicDoc.data.content} />
+       </div>
+ </div>
         </DefaultLayout>
     );
   } else if (notFound) {
