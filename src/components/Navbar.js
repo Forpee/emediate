@@ -2,11 +2,15 @@ import { useState } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import ClearIcon from "@material-ui/icons/Clear";
 import { Transition } from "@headlessui/react";
+import {useDarkMode } from '../App'
+
 export default function Navbar() {
+  const darkMode = useDarkMode((state) => state.darkMode);
+
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <div className="bg-yellow-50 flex h-16 shadow-sm justify-between px-4 lg:px-16">
+      <div className={!darkMode ? "bg-yellow-50 flex h-16 shadow-sm justify-between px-4 lg:px-16" : "bg-black-50 flex h-16 shadow-sm justify-between px-4 lg:px-16"}>
         <div className=" flex items-center h-full">
           <img className="h-16 my-auto" src="/logo.png" alt="logo" />
           <div>
