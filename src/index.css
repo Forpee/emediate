@@ -28,13 +28,6 @@ h6 {
 .h-screen-1\/2 {
   height: 50vh;
 }
-<<<<<<< HEAD
-.round-circle{
-  height: 500px;
-  width: 500px;
-  z-index: 0;
-}
-=======
 .bg-black-50 {
   background-color: #202020;
 }
@@ -42,4 +35,3 @@ h6 {
 .wobble-div {
   height: 50vh;
 }
->>>>>>> blog

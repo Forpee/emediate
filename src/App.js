@@ -26,12 +26,7 @@ function App() {
 
   return (
     <div className="h-screen overflow-x-hidden relative ">
-     
-   <Navbar/>
-   <Header/>
-   <Ebook/>
-   <Footer/>
- 
+
     <div className=" overflow-x-hidden">
       <Helmet>
         <script
@@ -55,6 +50,7 @@ function App() {
           <Route component={NotFound} />
         </Switch>
       </div>
+    </div>
     </div>
   );
 }

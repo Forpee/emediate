@@ -9,13 +9,8 @@ export default function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false);
   return (
-<<<<<<< HEAD
-    <div className='z-20'>
-      <div className="bg-yellow-50 flex h-16 shadow-lg justify-between z-20 px-4 lg:px-16">
-=======
     <div>
       <div className={!darkMode ? "bg-yellow-50 flex h-16 shadow-sm justify-between px-4 pt-4 lg:px-16" : " pt-4 bg-black-50 flex h-16 shadow-sm justify-between px-4 lg:px-16"}>
->>>>>>> blog
         <div className=" flex items-center h-full">
        <a className='flex items-center h-full' href='/'>
        <img className="h-16 my-auto" src="/logo.png" alt="logo" />
@@ -25,34 +20,7 @@ export default function Navbar() {
        </a>
         </div>
         <div className="hidden md:flex items-center">
-<<<<<<< HEAD
-          <div>
-            <a
-              className="font-semibold  mx-6 hover:text-yellow-400 text-gray-700"
-              href="/"
-            >
-              HOME
-            </a>
-          </div>
-          <div>
-            <a
-              className="font-semibold mx-6 hover:text-yellow-400 text-gray-700"
-              href="/"
-            >
-              ABOUT
-            </a>
-          </div>
-          <div>
-            <a
-              className="font-semibold mx-6 hover:text-yellow-400 text-gray-700"
-              href="/"
-            >
-              E-BOOK
-            </a>
-          </div>
-=======
             <h1 className="font-semibold text-yellow-400 text-lg">E-Mediate</h1>
->>>>>>> blog
         </div>
 
         <div className="flex items-center md:hidden">
