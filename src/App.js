@@ -1,6 +1,4 @@
 import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import Ebook from "./components/Ebook";
 import Footer from "./components/Footer";
 import { Helmet } from "react-helmet";
 import Blog from "./Blog";
@@ -8,26 +6,16 @@ import Post from "./Post";
 import { apiEndpoint } from "./prismic-configuration";
 import NotFound from "./NotFound";
 import Wobble from "./components/Wobble";
-import create from "zustand";
 
 import { Switch, Route } from "react-router-dom";
 
-export const useDarkMode = create((set) => ({
-  darkMode: false,
-  changeDarkMode : (mode)=> set((state)=>{
-  return{
-    ...state,
-    darkMode : mode,
-  }
-  })
-}))
+
 function Home() {
   return (
     <div>
       <Navbar />
       <Wobble />
-      <Header />
-      <Ebook />
+      <Blog />
       <Footer />
     </div>
   );

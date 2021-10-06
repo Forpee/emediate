@@ -1,7 +1,7 @@
 import InstagramIcon from "@material-ui/icons/Instagram";
 import EmailIcon from "@material-ui/icons/Email";
 import BookIcon from "@material-ui/icons/Book";
-import {useDarkMode } from '../App'
+import {useDarkMode } from '../Store'
 export default function Footer() {
   const darkMode = useDarkMode((state) => state.darkMode);
   return (

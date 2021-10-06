@@ -4,8 +4,9 @@ import PostList from "./components/PostList";
 import DefaultLayout from "./components/DefaultLayout";
 import NotFound from "./NotFound";
 import { client } from "./utils/prismicHelpers.js";
-
+import {useDarkMode} from './Store'
 export default function Blog() {
+  const darkMode = useDarkMode((state) => state.darkMode);
   const [prismicData, setPrismicData] = useState({
     homeDoc: null,
     blogPosts: null,
@@ -37,12 +38,12 @@ export default function Blog() {
   }, []);
   if (prismicData.homeDoc) {
     const blogPosts = prismicData.blogPosts;
-
+    
     return (
-      <DefaultLayout wrapperClass=' bg-yellow-50 '>
-      <img className="bg-yellow-50 px-8 lg:w-1/2 xl:px-0 xl:w-1/3 mx-auto my-16" alt=' logo' src=' ye.png'></img>
+      <div className={darkMode ? " bg-black-50 text-gray-200 " : " bg-yellow-50 text-gray-800 "  }>
+        <h1 className='text-center uppercase md:w-1/2 m-auto  text-7xl font-bold'>The Strategies of Self Directed Warefare</h1>
         <PostList posts={blogPosts} />
-      </DefaultLayout>
+      </div>
     );
   } else if (notFound) {
     return <NotFound />;

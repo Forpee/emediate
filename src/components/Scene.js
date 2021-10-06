@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber'
 import { PerspectiveCamera, Environment, MeshDistortMaterial, ContactShadows } from '@react-three/drei'
 import { useSpring } from '@react-spring/core'
 import { a } from '@react-spring/three'
-import {useDarkMode} from '../App'
+import {useDarkMode} from '../Store'
 
 
 
@@ -15,9 +15,11 @@ const AnimatedMaterial = a(MeshDistortMaterial)
 export default function Scene({ setBg }) {
  
   const changeDarkMode = useDarkMode((state) => state.changeDarkMode)
+  const darkMode = useDarkMode((state) => state.darkMode);
+
   const sphere = useRef()
   const light = useRef()
-  const [mode, setMode] = useState(false)
+
   const [down, setDown] = useState(false)
   const [hovered, setHovered] = useState(false)
 
@@ -50,13 +52,13 @@ export default function Scene({ setBg }) {
   const [{ wobble, coat, color, ambient, env }] = useSpring(
     {
       wobble: down ? 1.2 : hovered ? 1.05 : 1,
-      coat: mode && !hovered ? 0.04 : 1,
-      ambient: mode && !hovered ? 1.5 : 0.5,
-      env: mode && !hovered ? 0.4 : 1,
-      color: hovered ? '#E8B059' : mode ? '#202020' : 'white',
+      coat: darkMode && !hovered ? 0.04 : 1,
+      ambient: darkMode && !hovered ? 1.5 : 0.5,
+      env: darkMode && !hovered ? 0.4 : 1,
+      color: hovered ? '#E8B059' : darkMode ? '#202020' : 'white',
       config: (n) => n === 'wobble' && hovered && { mass: 2, tension: 1000, friction: 10 }
     },
-    [mode, hovered, down]
+    [darkMode, hovered, down]
   )
 
   return (
@@ -73,11 +75,11 @@ export default function Scene({ setBg }) {
           onPointerOut={() => setHovered(false)}
           onPointerDown={() => setDown(true)}
           onPointerUp={() => {
-            changeDarkMode(!mode)
+            changeDarkMode(!darkMode)
             setDown(false)
             // Toggle mode between dark and bright
-            setMode(!mode)
-            setBg({ background: !mode ? '#202020' : '#FFFBEB', fill: !mode ? '#FFFBEB' : '#202020' })
+            
+            setBg({ background: !darkMode ? '#202020' : '#FFFBEB', fill: !darkMode ? '#FFFBEB' : '#202020' })
           }}>
           <sphereBufferGeometry args={[1, 64, 64]} />
           <AnimatedMaterial color={color} envMapIntensity={env} clearcoat={coat} clearcoatRoughness={0} metalness={0.1} />
@@ -86,7 +88,7 @@ export default function Scene({ setBg }) {
         <ContactShadows
           rotation={[Math.PI / 2, 0, 0]}
           position={[0, -1.6, 0]}
-          opacity={mode ? 0.8 : 0.4}
+          opacity={darkMode ? 0.8 : 0.4}
           width={15}
           height={15}
           blur={2.5}

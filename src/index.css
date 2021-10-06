@@ -25,9 +25,13 @@ h5,
 h6 {
   font-family: "Proza Libre", sans-serif;
 }
-.h-screen-1\/2{
+.h-screen-1\/2 {
   height: 50vh;
 }
-.bg-black-50{
-  background-color:  #202020;
+.bg-black-50 {
+  background-color: #202020;
+}
+
+.wobble-div {
+  height: 50vh;
 }

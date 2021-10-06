@@ -7,16 +7,18 @@ import SliceZone from "./components/SliceZone";
 import NotFound from "./NotFound";
 import { client } from "./utils/prismicHelpers";
 import { useParams } from "react-router-dom";
-
+import {useDarkMode} from "./Store"
 /**
  * Blog post page component
  */
 const Post = ({ match }) => {
+  const darkMode = useDarkMode((state) => state.darkMode);
+
   const [prismicDoc, setPrismicDoc] = useState(null);
   const [notFound, toggleNotFound] = useState(false);
 
   //const uid = match.params.uid;
-const {uid} = useParams()
+  const { uid } = useParams();
 
   // Get the blog post document from Prismic
   useEffect(() => {
@@ -43,26 +45,27 @@ const {uid} = useParams()
 
   // Return the page if a document was retrieved from Prismic
   if (prismicDoc) {
-   
-    const src =prismicDoc.data.thumbnail.url
+    const src = prismicDoc.data.thumbnail.url;
     const title =
       prismicDoc.data.title.length !== 0
         ? RichText.asText(prismicDoc.data.title)
         : "Untitled";
 
     return (
-      <DefaultLayout wrapperClass="bg-yellow-50 " seoTitle={title}>
- <div className='md:px-16'>
- <div className="container px-8 md:px-16 text-xl xl:w-1/2 mx-auto bg-white shadow-lg rounded-xl my-16 p-16">
-       <div className="">
-          <BackButton />
-          <h1 className="text-5xl md:text-6xl py-16 text-center">{title}</h1>
-          <img alt='' className='mx-auto mb-16 rounded-xl' src={src}/>
+      <DefaultLayout wrapperClass={darkMode ? "bg-black-50 " : "bg-yellow-50 "} seoTitle={title}>
+        <div className="md:px-16">
+          <div className="container px-8 md:px-16 text-xl xl:w-1/2 mx-auto bg-white shadow-lg rounded-xl my-16 p-16">
+            <div className="">
+              <BackButton />
+              <h1 className="text-5xl md:text-6xl py-16 text-center">
+                {title}
+              </h1>
+              <img alt="" className="mx-auto mb-16 rounded-xl" src={src} />
+            </div>
+            <SliceZone sliceZone={prismicDoc.data.content} />
+          </div>
         </div>
-        <SliceZone sliceZone={prismicDoc.data.content} />
-       </div>
- </div>
-        </DefaultLayout>
+      </DefaultLayout>
     );
   } else if (notFound) {
     return <NotFound />;
