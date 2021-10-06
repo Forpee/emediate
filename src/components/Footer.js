@@ -1,9 +1,17 @@
 import InstagramIcon from "@material-ui/icons/Instagram";
 import EmailIcon from "@material-ui/icons/Email";
 import BookIcon from "@material-ui/icons/Book";
+<<<<<<< HEAD
 export default function Footer() {
   return (
     <footer className=" bg-yellow-50 overflow-hidden pt-16">
+=======
+import {useDarkMode } from '../Store'
+export default function Footer() {
+  const darkMode = useDarkMode((state) => state.darkMode);
+  return (
+    <footer className={!darkMode ? " bg-yellow-50 overflow-hidden pt-16" : " bg-black-50 overflow-hidden pt-16 text-gray-300" }>
+>>>>>>> blog
       <div className="w-screen sm:flex justify-evenly">
         <div className=" sm:w-1/4">
           <hr className="border-1 border-yellow-400"></hr>

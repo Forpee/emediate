@@ -2,20 +2,30 @@ import { useState } from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import ClearIcon from "@material-ui/icons/Clear";
 import { Transition } from "@headlessui/react";
+import {useDarkMode } from '../Store'
+
 export default function Navbar() {
+  const darkMode = useDarkMode((state) => state.darkMode);
+
   const [isOpen, setIsOpen] = useState(false);
   return (
+<<<<<<< HEAD
     <div className='z-20'>
       <div className="bg-yellow-50 flex h-16 shadow-lg justify-between z-20 px-4 lg:px-16">
+=======
+    <div>
+      <div className={!darkMode ? "bg-yellow-50 flex h-16 shadow-sm justify-between px-4 pt-4 lg:px-16" : " pt-4 bg-black-50 flex h-16 shadow-sm justify-between px-4 lg:px-16"}>
+>>>>>>> blog
         <div className=" flex items-center h-full">
        <a className='flex items-center h-full' href='/'>
        <img className="h-16 my-auto" src="/logo.png" alt="logo" />
           <div>
-            <h1 className="font-semibold text-yellow-400 text-lg">E-Mediate</h1>
+          
           </div>
        </a>
         </div>
         <div className="hidden md:flex items-center">
+<<<<<<< HEAD
           <div>
             <a
               className="font-semibold  mx-6 hover:text-yellow-400 text-gray-700"
@@ -40,6 +50,9 @@ export default function Navbar() {
               E-BOOK
             </a>
           </div>
+=======
+            <h1 className="font-semibold text-yellow-400 text-lg">E-Mediate</h1>
+>>>>>>> blog
         </div>
 
         <div className="flex items-center md:hidden">

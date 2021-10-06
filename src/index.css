@@ -25,11 +25,21 @@ h5,
 h6 {
   font-family: "Proza Libre", sans-serif;
 }
-.h-screen-1\/2{
+.h-screen-1\/2 {
   height: 50vh;
 }
+<<<<<<< HEAD
 .round-circle{
   height: 500px;
   width: 500px;
   z-index: 0;
 }
+=======
+.bg-black-50 {
+  background-color: #202020;
+}
+
+.wobble-div {
+  height: 50vh;
+}
+>>>>>>> blog
