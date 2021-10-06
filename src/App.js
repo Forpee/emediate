@@ -25,7 +25,6 @@ function App() {
   const repoName = repoNameArray[1];
 
   return (
-<<<<<<< HEAD
     <div className="h-screen overflow-x-hidden relative ">
      
    <Navbar/>
@@ -33,7 +32,6 @@ function App() {
    <Ebook/>
    <Footer/>
  
-=======
     <div className=" overflow-x-hidden">
       <Helmet>
         <script
@@ -57,7 +55,6 @@ function App() {
           <Route component={NotFound} />
         </Switch>
       </div>
->>>>>>> blog
     </div>
   );
 }

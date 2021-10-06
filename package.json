@@ -8,14 +8,11 @@
     "@material-ui/core": "^4.12.1",
     "@material-ui/icons": "^4.11.2",
     "@prismicio/client": "^5.1.0",
-<<<<<<< HEAD
-=======
     "@react-spring/core": "^9.2.4",
     "@react-spring/three": "^9.2.4",
     "@react-spring/web": "^9.2.4",
     "@react-three/drei": "^7.3.1",
     "@react-three/fiber": "^7.0.6",
->>>>>>> blog
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
